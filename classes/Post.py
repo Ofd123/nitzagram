@@ -20,7 +20,10 @@ class Post:
         self.username = str(username)
         self.location = str(location)
         self.description = str(description)
-#----------------------------------------------------------------
+        self.likes_counter = 0
+        self.comments = []
+
+
     def display(self):
         """
         Display the Post image/Text, description, location, likes and comments

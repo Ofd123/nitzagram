@@ -5,13 +5,13 @@ from helpers import screen
 
 
 class Post:
-    username = ""
-    location = ""
-    description = ""
-    likes_counter = 0
-    comments_counter = 0
-    comments = []
-    showAll = False
+    username = ""           #the poster's name
+    location = ""           #the pinged location
+    description = ""        #the post's description
+    likes_counter = 0       #the counter of likes
+    comments_counter = 0    #the counter of comments (for urself)
+    comments = []           #the comments for the post
+    showAll = False         #if the user is intrested in watching all comments
 #----------------------------------------------------------------
     """
     A class used to represent post on Nitzagram
@@ -24,7 +24,7 @@ class Post:
         self.comments = []
 
 
-    def display(self):
+    def display(self):#############################################################################
         """
         Display the Post image/Text, description, location, likes and comments
         on screen
@@ -61,4 +61,23 @@ class Post:
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
 #----------------------------------------------------------------
+def add_like(self): #############################################################################
+    """
+    adds to the post 1 like
+    :return: None
+    :no inputs:
+    """
+    self.likes_counter += 1
+#----------------------------------------------------------------
+def add_comment(self, comment):
+    """
+    adds a comment to the post
+    :param comment: comment to be added
+    :return: None
+    :no inputs:
+    """
+    self.comments.append(comment)
+    self.comments_counter += 1
+#----------------------------------------------------------------
+
 #----------------------------------------------------------------

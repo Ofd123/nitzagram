@@ -1,17 +1,14 @@
 import pygame
-
 from constants import *
 
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.RESIZABLE)
-
-
 def from_text_to_array(text):
     """
     the function get text and break it into sentences that fits the screen, in
     case the text too long to for one line
     :param text: string
         text to show on screen
-    :return: list of sentences
+        :return: list of sentences
     """
     text_array = []
     text_to_edit = text
@@ -31,8 +28,7 @@ def from_text_to_array(text):
     else:
         text_array.append(text)
     return text_array
-
-
+#--------------------------------------------------------------------------------
 def mouse_in_button(button, mouse_pos):
     """
     The function get button and mouse press position on screen and return True
@@ -47,8 +43,7 @@ def mouse_in_button(button, mouse_pos):
     if button.x_pos + button.width > mouse_pos[0] > button.x_pos and \
             button.y_pos < mouse_pos[1] < button.y_pos + button.height:
         return True
-
-
+#--------------------------------------------------------------------------------
 def draw_comment_text_box():
     pygame.draw.rect(screen, GREY, pygame.Rect(
         VIEW_MORE_COMMENTS_X_POS, VIEW_MORE_COMMENTS_Y_POS, 300, 20))
@@ -56,10 +51,8 @@ def draw_comment_text_box():
                      pygame.Rect(VIEW_MORE_COMMENTS_X_POS + 1,
                                  VIEW_MORE_COMMENTS_Y_POS + 1, 298, 18))
     pygame.display.flip()
-
-
-# Get the comment that the user typed will using Nitzagram and translate it
-# to string
+#--------------------------------------------------------------------------------
+# Get the comment that the user typed using Nitzagram and translate it to string
 def read_comment_from_user():
     """
     Read the comment the user type.
@@ -90,8 +83,7 @@ def read_comment_from_user():
                              VIEW_MORE_COMMENTS_Y_POS + 1))
                 pygame.display.update()
     return new_comment
-
-
+#--------------------------------------------------------------------------------
 def center_text(num_of_rows, text_to_display, row_number):
     """
     center a sentence on screen
@@ -114,3 +106,4 @@ def center_text(num_of_rows, text_to_display, row_number):
     text_rect.y = (POST_Y_POS + horizontal_margin +
                    row_number * TEXT_POST_FONT_SIZE)
     return text_rect
+#--------------------------------------------------------------------------------
